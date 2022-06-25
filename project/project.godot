@@ -8,10 +8,39 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Beatmap",
+"language": "GDScript",
+"path": "res://game/beatmaps/beatmap.gd"
+}, {
+"base": "Node2D",
+"class": "Furniture",
+"language": "GDScript",
+"path": "res://game/Furniture.gd"
+}, {
+"base": "Node2D",
+"class": "Module",
+"language": "GDScript",
+"path": "res://game/furniture-modules/Module.gd"
+} ]
+_global_script_class_icons={
+"Beatmap": "",
+"Furniture": "",
+"Module": ""
+}
+
 [application]
 
 config/name="Furniture Game"
+run/main_scene="res://game/Game.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/aspect="keep"
 
 [physics]
 
