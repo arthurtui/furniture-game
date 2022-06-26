@@ -1,8 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://game/furniture-modules/Module.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/furniture-modules/DrillerModule.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/input-prompts/A_Key_Dark.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/input-prompts/D_Key_Dark.png" type="Texture" id=4]
+[ext_resource path="res://assets/sfx/furadeira.wav" type="AudioStream" id=5]
 
 [node name="DrillerModule" instance=ExtResource( 1 )]
-modulate = Color( 1, 0, 0, 1 )
 script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 100, 0, 0, 1 )
+
+[node name="InputLeft" type="Sprite" parent="Input" index="0"]
+visible = false
+modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
+position = Vector2( -128, 0 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="InputRight" type="Sprite" parent="Input" index="1"]
+visible = false
+modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
+position = Vector2( 128, 0 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+[node name="HitSFX" parent="." index="6"]
+stream = ExtResource( 5 )

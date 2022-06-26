@@ -6,8 +6,14 @@ var side : int
 var state := WAITING
 
 
+func _ready():
+	score_hit = Constants.SCORE_DRILL
+	set_process(false)
+
+
 func set_side(s: String):
 	side = Constants.SIDE_MAP[s]
+	[$Input/InputLeft, $Input/InputRight][side].show()
 
 
 func handle_input(event: InputEvent):
@@ -43,5 +49,15 @@ func handle_input(event: InputEvent):
 
 
 func deactivate():
+	.deactivate()
 	if state == WAITING:
 		miss()
+
+
+func begin_input_scroll(speed: float):
+	.begin_input_scroll(speed)
+	set_process(true)
+
+
+func stop_input_scroll():
+	set_process(false)

@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://game/beatmaps/beatmap.gd"
 }, {
 "base": "Node2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://Character.gd"
+}, {
+"base": "Node2D",
 "class": "Furniture",
 "language": "GDScript",
 "path": "res://game/Furniture.gd"
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Beatmap": "",
+"Character": "",
 "Furniture": "",
 "Module": ""
 }

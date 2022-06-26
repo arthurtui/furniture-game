@@ -4,8 +4,14 @@ var side : int
 var done := false
 
 
+func _ready():
+	score_hit = Constants.SCORE_HAMMER
+
+
 func set_side(s: String):
 	side = Constants.SIDE_MAP[s]
+	[$Input/InputLeft, $Input/InputRight][side].show()
+	$AnimationPlayer.play(s)
 
 
 func handle_input(event: InputEvent):
@@ -30,5 +36,6 @@ func handle_input(event: InputEvent):
 
 
 func deactivate():
+	.deactivate()
 	if not done:
 		miss()

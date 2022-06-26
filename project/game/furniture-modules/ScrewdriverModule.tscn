@@ -1,14 +1,158 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/furniture-modules/Module.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/furniture-modules/ScrewdriverModule.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/input-prompts/U_Key_Dark.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/input-prompts/A_Key_Dark.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/input-prompts/D_Key_Dark.png" type="Texture" id=5]
+[ext_resource path="res://assets/sfx/chave.wav" type="AudioStream" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "left"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Input/Left/InputLeft:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.4, 0.4 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Input/Left/InputLeft:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.752941, 0.752941, 0.752941, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Input/Left/InputUp:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.4, 0.4 ), Vector2( 0.5, 0.5 ), Vector2( 0.4, 0.4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Input/Left/InputUp:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 0.752941, 0.752941, 0.752941, 1 ), Color( 1, 1, 1, 1 ), Color( 0.752941, 0.752941, 0.752941, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "right"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Input/Right/InputRight:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.4, 0.4 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Input/Right/InputRight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.752941, 0.752941, 0.752941, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Input/Right/InputUp:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.4, 0.4 ), Vector2( 0.5, 0.5 ), Vector2( 0.4, 0.4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Input/Right/InputUp:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 0.752941, 0.752941, 0.752941, 1 ), Color( 1, 1, 1, 1 ), Color( 0.752941, 0.752941, 0.752941, 1 ) ]
+}
 
 [node name="ScrewdriverModule" instance=ExtResource( 1 )]
-modulate = Color( 0, 0, 1, 1 )
 script = ExtResource( 2 )
+blocks_height = 3
 
 [node name="Sprite" parent="." index="0"]
+modulate = Color( 0, 0, 100, 1 )
 scale = Vector2( 2, 3 )
 
 [node name="VisibilityNotifier2D" parent="." index="1"]
 rect = Rect2( -64, -96, 128, 192 )
+
+[node name="Left" type="Node2D" parent="Input" index="0"]
+visible = false
+
+[node name="InputLeft" type="Sprite" parent="Input/Left" index="0"]
+position = Vector2( -128, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="InputUp" type="Sprite" parent="Input/Left" index="1"]
+modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
+position = Vector2( -88, -40 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="Right" type="Node2D" parent="Input" index="1"]
+visible = false
+
+[node name="InputRight" type="Sprite" parent="Input/Right" index="0"]
+position = Vector2( 128, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="InputUp" type="Sprite" parent="Input/Right" index="1"]
+modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
+position = Vector2( 88, -40 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" parent="." index="5"]
+anims/left = SubResource( 1 )
+anims/right = SubResource( 2 )
+
+[node name="HitSFX" parent="." index="6"]
+stream = ExtResource( 6 )

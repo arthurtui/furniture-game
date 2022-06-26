@@ -9,9 +9,21 @@ song_path = ""
 bpm = 120.0
 duration_beats = 120
 beats = {
-10: {
+5: {
 "side": "right",
 "type": "hammer"
+},
+10: {
+"side": "left",
+"type": "hammer"
+},
+12: {
+"side": "left",
+"type": "screwdriver"
+},
+18: {
+"side": "right",
+"type": "driller"
 },
 20: {
 "type": "saw"
