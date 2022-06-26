@@ -14,4 +14,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
+[node name="Line2D" type="Line2D" parent="FurniturePosition"]
+points = PoolVector2Array( -960, 0, 960, 0 )
+default_color = Color( 1, 0.356863, 0.356863, 1 )
+
 [node name="Furniture" parent="FurniturePosition" instance=ExtResource( 2 )]

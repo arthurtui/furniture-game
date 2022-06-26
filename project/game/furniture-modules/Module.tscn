@@ -13,4 +13,18 @@ texture = ExtResource( 2 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 rect = Rect2( -64, -32, 128, 64 )
 
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 64.0
+margin_right = 104.0
+margin_bottom = 14.0
+text = "OK"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+margin_left = 64.0
+margin_right = 104.0
+margin_bottom = 14.0
+text = "FAIL"
+
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

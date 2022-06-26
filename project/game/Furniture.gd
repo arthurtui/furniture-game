@@ -9,32 +9,34 @@ const MODULE_SCENES = {
 	"screwdriver": preload("res://game/furniture-modules/ScrewdriverModule.tscn")
 }
 
-var speed : float = 200
+var speed : float
+var stack : Array
+
+
+func _ready():
+	set_process(true)
 
 
 func _process(delta: float):
-	for child in get_children():
-		var module : Module = child
-		module.position.y += speed * delta
+	position.y += speed * delta
 
 
-func create_module(module_data: Dictionary):
+func create_module(module_data: Dictionary) -> Module:
 	var module : Module = MODULE_SCENES[module_data.type].instance() as Module
-	if get_children().size():
-		var last : Module = get_children().back() as Module
-		module.position.y = last.position.y - (Module.HEIGHT / 2.0) *\
-				(last.blocks_height + module.blocks_height)
+	module.position.y = module_data.y - (module.blocks_height - 1) *\
+			Module.BLOCK_SIZE / 2.0
 	if "side" in module_data.keys():
 		module.set_side(module_data.side)
 	add_child(module)
+	stack.append(module)
 # warning-ignore:return_value_discarded
 	module.connect("screen_exited", self, "_on_module_screen_exited", [module])
+	return module
 
 
-func last_module():
-	return get_children().back()
+func last_module() -> Module:
+	return get_children().back() as Module
 
 
 func _on_module_screen_exited(module: Module):
-	print(module, ": Goodbye cruel world")
 	module.queue_free()
