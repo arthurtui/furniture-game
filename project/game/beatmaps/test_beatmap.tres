@@ -6,8 +6,8 @@
 script = ExtResource( 1 )
 song_name = ""
 song_path = ""
-bpm = 240.0
-duration_beats = 240
+bpm = 120.0
+duration_beats = 120
 beats = {
 10: {
 "side": "right",
@@ -32,7 +32,7 @@ beats = {
 "side": "left",
 "type": "hammer"
 },
-239: {
+119: {
 "type": "saw"
 }
 }

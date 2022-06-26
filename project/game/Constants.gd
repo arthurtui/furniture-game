@@ -1,5 +1,7 @@
 extends Node
 
+enum {LEFT, RIGHT, UP}
+
 const MODULE_HEIGHTS = {
 	"empty": 1,
 	"driller": 1,
@@ -8,3 +10,5 @@ const MODULE_HEIGHTS = {
 	"screwdriver": 3
 }
 const SCREEN_SIZE = Vector2(1920, 1080)
+const LENIENCY = .1 #seconds
+const SIDE_MAP = {"left": LEFT, "right": RIGHT}

@@ -9,17 +9,33 @@ export(int) var blocks_height := 1;
 
 const BLOCK_SIZE := 64
 
+var beat_begin : int
+var beat_end : int
+
+
+func set_beat(beat: int):
+	beat_begin = beat
+	beat_end = beat + blocks_height - 1
+
 
 func set_side(_side: String):
 	pass
 
 
-func hit():
+func handle_input(_event: InputEvent):
 	pass
+
+
+func deactivate():
+	pass
+
+
+func hit():
+	$OK.show()
 
 
 func miss():
-	pass
+	$FAIL.show()
 
 
 func get_size() -> Vector2:

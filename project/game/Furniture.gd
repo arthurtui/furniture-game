@@ -25,6 +25,7 @@ func create_module(module_data: Dictionary) -> Module:
 	var module : Module = MODULE_SCENES[module_data.type].instance() as Module
 	module.position.y = module_data.y - (module.blocks_height - 1) *\
 			Module.BLOCK_SIZE / 2.0
+	module.set_beat(module_data.beat)
 	if "side" in module_data.keys():
 		module.set_side(module_data.side)
 	add_child(module)
