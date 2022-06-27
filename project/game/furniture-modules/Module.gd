@@ -11,7 +11,7 @@ onready var sprite = $Sprite
 
 export(int) var blocks_height := 1;
 
-const BLOCK_SIZE := 64
+const BLOCK_SIZE := 128
 
 var beat_begin : int
 var beat_end : int

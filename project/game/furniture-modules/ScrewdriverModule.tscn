@@ -113,14 +113,9 @@ tracks/3/keys = {
 
 [node name="ScrewdriverModule" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-blocks_height = 3
 
 [node name="Sprite" parent="." index="0"]
-modulate = Color( 0, 0, 100, 1 )
-scale = Vector2( 2, 3 )
-
-[node name="VisibilityNotifier2D" parent="." index="1"]
-rect = Rect2( -64, -96, 128, 192 )
+frame = 3
 
 [node name="Left" type="Node2D" parent="Input" index="0"]
 visible = false

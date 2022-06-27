@@ -42,7 +42,7 @@ vframes = 11
 frame = 10
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-rect = Rect2( -64, -32, 128, 64 )
+rect = Rect2( -64, -64, 128, 128 )
 
 [node name="OK" type="Label" parent="."]
 visible = false

@@ -7,7 +7,7 @@ const MODULE_HEIGHTS = {
 	"driller": 1,
 	"hammer": 1,
 	"saw": 1,
-	"screwdriver": 3
+	"screwdriver": 1
 }
 const SCREEN_SIZE = Vector2(1920, 1080)
 const LENIENCY = .1 #seconds

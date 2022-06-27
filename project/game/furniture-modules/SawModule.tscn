@@ -61,9 +61,6 @@ tracks/3/keys = {
 [node name="SawModule" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Sprite" parent="." index="0"]
-modulate = Color( 100, 100, 0, 1 )
-
 [node name="InputLeft" type="Sprite" parent="Input" index="0"]
 position = Vector2( -128, 0 )
 scale = Vector2( 0.5, 0.5 )

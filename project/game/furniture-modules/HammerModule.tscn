@@ -1,14 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game/furniture-modules/Module.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/furniture-modules/HammerModule.gd" type="Script" id=2]
 [ext_resource path="res://assets/images/input-prompts/A_Key_Dark.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/input-prompts/D_Key_Dark.png" type="Texture" id=4]
 [ext_resource path="res://assets/sfx/martelo.wav" type="AudioStream" id=5]
-
-[sub_resource type="StreamTexture" id=3]
-flags = 4
-load_path = "res://.import/hammer shelf.png-d3d3d75a1e354ab478ea28a3e302ff07.stex"
 
 [sub_resource type="Animation" id=1]
 resource_name = "left"
@@ -70,11 +66,10 @@ tracks/1/keys = {
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
-texture = SubResource( 3 )
+frame = 1
 
 [node name="VisibilityNotifier2D" parent="." index="1"]
 position = Vector2( 1.90735e-06, 0 )
-rect = Rect2( -64, -64, 128, 128 )
 
 [node name="InputLeft" type="Sprite" parent="Input" index="0"]
 visible = false
